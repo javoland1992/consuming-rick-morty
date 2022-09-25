@@ -2,24 +2,45 @@ const path = require('path');
 
 module.exports = {
   // APP ENTRY POINT
-  entry: path.join(__dirname,'src','index.js'),
+  entry: path.join(__dirname, 'src', 'index.js'),
 
   // OUTPUT DIRECTORY
   output: {
-    path: path.join(__dirname,'public'),
+    path: path.join(__dirname, 'dist'),
     filename: 'main.bundle.js'
   },
 
   // EVIROMENT MODE
   mode: process.env.NODE_ENV || 'development',
 
+  // LOADERS
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
+      }
+    ],
+  },
+
   // PATH RESOLVE
   resolve: {
-    modules: [path.resolve(__dirname, 'src'), 'node_modules']
+    extensions: ['.js', '.json', '.jsx'],
+
+    modules: [
+      path.resolve(__dirname, 'src'),
+      'node_modules'
+    ]
   },
 
   // DEV SERVER ENTRY POINT
   devServer: {
-    contentBase: path.join(__dirname,'src')
+    contentBase: path.resolve(__dirname, "./src"),
+    port: 3500,
+    watchContentBase: true,
+    open: true
   }
 };
