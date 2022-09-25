@@ -1,0 +1,28 @@
+{
+  "name": "consuming-rick-morty",
+  "version": "1.0.0",
+  "description": "this repo is for get and show info from this https://rickandmortyapi.com",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server  --config webpack.config.js",
+    "build": "webpack --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://javoand1992@github.com/javoland1992/consuming-rick-morty.git"
+  },
+  "keywords": [],
+  "author": "Jose Javier Gamez Andrade (jose.gamez.andrade@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/javoland1992/consuming-rick-morty/issues"
+  },
+  "homepage": "https://github.com/javoland1992/consuming-rick-morty#readme",
+  "devDependencies": {
+    "path": "^0.12.7",
+    "webpack": "4.20.2",
+    "webpack-cli": "3.1.2",
+    "webpack-dev-server": "3.1.9"
+  }
+}
